@@ -1,16 +1,8 @@
 {
-  "name": "Stats Lab - Jupyter Notebook with R",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  
-  "features": {
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "latest"
-    },
-    "ghcr.io/rocker-org/devcontainer-features/r-apt:latest": {
-      "version": "latest"
-    }
+  "name": "Stats Lab - Jupyter with R",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,15 +14,10 @@
         "reditorsupport.r-lsp"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/python/current/bin/python",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
         "jupyter.notebookFileRoot": "${workspaceFolder}"
       }
     }
   },
-
-  "postCreateCommand": "bash .devcontainer/setup.sh",
-
-  "forwardPorts": [8888],
-
-  "remoteUser": "codespace"
+  "forwardPorts": [8888]
 }
